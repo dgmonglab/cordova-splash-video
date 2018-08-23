@@ -6,7 +6,8 @@ splashvideo.install = function() {
         window.plugins = {};
     }
 
-    window.plugins.wallpaper = new splashvideo();
+    window.plugins.splashvideo = new splashvideo();
+    console.log("splashvideo start")
     return window.plugins.splashvideo;
 };
 

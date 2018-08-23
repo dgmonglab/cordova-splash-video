@@ -1,6 +1,6 @@
 package com.dgmonglab.splashvideo;
 
-import gr.your.package.R;
+
 
 import android.os.Bundle;
 
@@ -16,13 +16,16 @@ import android.view.animation.Animation;
 
 import android.view.animation.AnimationUtils;
 
-import android.widget.ImageView;
+import android.widget.VideoView;
+import android.media.MediaPlayer.OnCompletionListener;
+import android.media.*;
+import android.net.Uri;
 
 import android.widget.RelativeLayout;
 
 
 
-public class CordovaApp extends CordovaActivity
+public class splashvideo extends CordovaActivity
 
 {
 
@@ -46,7 +49,7 @@ public class CordovaApp extends CordovaActivity
        try {
              VideoView videoHolder = new VideoView(this);
              setContentView(videoHolder);
-             Uri video = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.splash);
+             Uri video = Uri.parse("android.resource://" + getPackageName() + "/splash.mp4" );
              videoHolder.setVideoURI(video);
              videoHolder.setOnCompletionListener(new OnCompletionListener() {
                  public void onCompletion(MediaPlayer mp) {
@@ -63,7 +66,7 @@ public class CordovaApp extends CordovaActivity
        if(isFinishing()) {
          return;
        }
-       super.setIntegerProperty("loadUrlTimeoutValue", 70000);
-       super.loadUrl("file:///android_asset/www/index.html",1000);
+       //super.setIntegerProperty("loadUrlTimeoutValue", 70000);
+       super.loadUrl("file:///android_asset/www/index.html");
    }
 }

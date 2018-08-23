@@ -19,30 +19,29 @@
 -->
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-      id="cordova-plugin-wallpaper-lockscreen"
+      id="cordova-splash-video"
       version="0.1.1">
     <name>Set Wallpaper</name>
     <description>Cordova Set Wallpaper Plugin</description>
     <license>Apache 2.0</license>
-    <keywords>cordova,wallpaper</keywords>
-    <repo>https://github.com/dgmonglab/cordova-plugin-wallpaper-lockscreen</repo>
+    <keywords>cordova,splash-video</keywords>
+    <repo>https://github.com/dgmonglab/cordova-splash-video</repo>
     <issue></issue>
 
-    <js-module src="www/wallpaper.js" name="wallpaper">
-        <clobbers target="wallpaper" />
+    <js-module src="www/splashvideo.js" name="splashvideo">
+        <clobbers target="splashvideo" />
     </js-module>
 
     <!-- android -->
     <platform name = "android">
         <config-file target = "res/xml/config.xml" parent = "/*">
-            <feature name = "wallpaper" >
-                <param name = "android-package" value = "fc.fcstudio.wallpaper"/>
+            <feature name = "splashvideo" >
+                <param name = "android-package" value = "com.dgmonglab.splashvideo"/>
             </feature>
         </config-file>
         <config-file target = "AndroidManifest.xml" parent="/*">
-            <uses-permission android:name = "android.permission.SET_WALLPAPER" />
         </config-file>
-        <source-file src = "src/android/wallpaper.java" target-dir = "src/fc/fcstudio" />
+        <source-file src = "src/android/splashvideo.java" target-dir = "src/com/dgmonglab" />
     </platform>
 
 </plugin>
